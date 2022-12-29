@@ -15,7 +15,7 @@ $db_table = "";
 // создать подключение к серверу
 $connect = mysqli_connect($servername, $username, $password, $dbname);
 // проверка соединения
-if (!$conn) {
+if (!$connect ) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
@@ -32,7 +32,7 @@ reg_date TIMESTAMP
 if (mysqli_query($connect, $sql)) {
     echo "Table Guests created successfully";
 } else {
-    echo "Error creating table: " . mysqli_error($conn);
+    echo "Error creating table: " . mysqli_error($connect);
 }
 
-mysqli_close($conn);
+mysqli_close($connect);
